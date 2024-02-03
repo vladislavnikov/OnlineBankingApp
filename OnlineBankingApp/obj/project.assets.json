@@ -4512,11 +4512,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp\\OnlineBankingApp.csproj",
+      "projectUniqueName": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp\\OnlineBankingApp.csproj",
       "projectName": "OnlineBankingApp",
-      "projectPath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp\\OnlineBankingApp.csproj",
+      "projectPath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp\\OnlineBankingApp.csproj",
       "packagesPath": "C:\\Users\\Vladislav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp\\obj\\",
+      "outputPath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vladislav\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4533,8 +4533,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj": {
-              "projectPath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj"
+            "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj"
             }
           }
         }

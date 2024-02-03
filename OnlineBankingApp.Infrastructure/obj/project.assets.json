@@ -4468,11 +4468,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\OnlineBankingApp.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\OnlineBankingApp.Infrastructure.csproj",
       "projectName": "OnlineBankingApp.Infrastructure",
-      "projectPath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\OnlineBankingApp.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\OnlineBankingApp.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Vladislav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vladislav\\AppData\\Roaming\\NuGet\\NuGet.Config",

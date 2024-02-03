@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WSjX7l3CNN3BDF7Iw5URXmvnp/M8BfCKdrx1CwwOq/1EQhf4x5qvVoSRCjHo44ab7ALYzuLlLRKGFOF3WkejVw==",
+  "dgSpecHash": "NQX8K146o9rKj0vaM8JCPkxpaphD/u8PNrKV//fL6yTB0wzngpecAZsKd15pYhcIiyWXGFlF70Lp5vCTPSqX4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vladislav\\Desktop\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj",
+  "projectFilePath": "C:\\Users\\Vladislav\\Documents\\GitHub\\OnlineBankingApp\\OnlineBankingApp.Core\\OnlineBankingApp.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vladislav\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Vladislav\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
