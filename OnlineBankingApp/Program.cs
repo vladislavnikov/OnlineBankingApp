@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OnlineBankingApp.Core.Contracts;
+using OnlineBankingApp.Core.Services;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
 
@@ -29,6 +31,7 @@ namespace OnlineBankingApp
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICardService, CardService>();
 
             var app = builder.Build();
 

@@ -1,7 +1,7 @@
-﻿using CleverHiveDiary.Core.ViewModels;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using OnlineBankingApp.Core.ViewModels.User;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
 
@@ -106,7 +106,7 @@ namespace OnlineBankingApp.Controllers
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
 
-                return RedirectToAction();
+                return RedirectToAction("Card", "Card");
             }
 
             ModelState.AddModelError("", "Invalid login");

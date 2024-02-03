@@ -10,6 +10,11 @@ namespace OnlineBankingApp.Infrastructure.Data.Models
 {
     public  class Card
     {
+        public Card()
+        {
+            Transactions = new List<Transaction>();
+        }
+
         [Key]
         public int Id { get; set; }
 
@@ -23,6 +28,8 @@ namespace OnlineBankingApp.Infrastructure.Data.Models
         public string UserId { get; set; } // One card belongs to one user
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; }
+
+        public ICollection<Transaction> Transactions { get; set;}
 
     }
 }

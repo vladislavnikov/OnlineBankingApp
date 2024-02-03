@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CleverHiveDiary.Core.ViewModels
+namespace OnlineBankingApp.Core.ViewModels.User
 {
     public class UserViewModel
     {

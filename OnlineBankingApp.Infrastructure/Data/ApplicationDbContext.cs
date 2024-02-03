@@ -15,5 +15,7 @@ namespace OnlineBankingApp.Data
         public DbSet<ApplicationUser> Users { get; set; } = null!;
 
         public DbSet<Card> Cards { get; set; } = null!;
+
+        public DbSet<Transaction> Transactions { get; set; } = null!;
     }
 }
