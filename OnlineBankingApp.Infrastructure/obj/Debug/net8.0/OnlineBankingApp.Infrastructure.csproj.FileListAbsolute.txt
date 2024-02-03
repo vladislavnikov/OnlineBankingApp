@@ -1,0 +1,14 @@
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.deps.json
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.runtimeconfig.json
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.pdb
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.AssemblyInfo.cs
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\refint\OnlineBankingApp.Infrastructure.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.pdb
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\OnlineBankingApp.Infrastructure.genruntimeconfig.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Infrastructure\obj\Debug\net8.0\ref\OnlineBankingApp.Infrastructure.dll

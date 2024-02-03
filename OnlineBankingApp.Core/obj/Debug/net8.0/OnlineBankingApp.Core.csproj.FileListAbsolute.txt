@@ -1,0 +1,17 @@
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Core.deps.json
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Core.runtimeconfig.json
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Core.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Core.pdb
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\bin\Debug\net8.0\OnlineBankingApp.Infrastructure.pdb
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.csproj.AssemblyReference.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.AssemblyInfoInputs.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.AssemblyInfo.cs
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.csproj.CopyComplete
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\refint\OnlineBankingApp.Core.dll
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.pdb
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\OnlineBankingApp.Core.genruntimeconfig.cache
+C:\Users\Vladislav\Desktop\OnlineBankingApp\OnlineBankingApp.Core\obj\Debug\net8.0\ref\OnlineBankingApp.Core.dll
