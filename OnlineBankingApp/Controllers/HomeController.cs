@@ -13,13 +13,18 @@ namespace OnlineBankingApp.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Privacy()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Index()
         {
+            if (User?.Identity?.IsAuthenticated ?? false)
+            {
+                return View();
+            }
+
             return View();
         }
 
