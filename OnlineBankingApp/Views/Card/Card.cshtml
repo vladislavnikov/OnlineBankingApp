@@ -8,6 +8,8 @@
 
             <h5 class="card-title mt-1">@Model.Number</h5>
             <p class="mb-0">@Model.Balance</p>
+            <a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@Model.Id"
+               class="btn btn-info">Deposit</a>
         </div>
     </div>
 

@@ -17,7 +17,12 @@ namespace OnlineBankingApp.Infrastructure.Data.Models
 
         public double Amount { get; set; }
 
-        
+        [Required]
+        public int TransactionTypeId { get; set; }
+
+        [ForeignKey(nameof(TransactionTypeId))]
+        public TransactionType TransactionType { get; set; }
+
         [Required]
         public int CardId { get; set; } 
         [ForeignKey(nameof(CardId))]

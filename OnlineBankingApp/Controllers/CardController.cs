@@ -34,13 +34,13 @@ namespace OnlineBankingApp.Controllers
             if (card == null)
             {
                 await cardService.CreateCardAsync(user.Id);
-                context.SaveChanges();
 
                 card = await context.Cards.FirstOrDefaultAsync(c => c.UserId == user.Id);
             }
 
             model = new CardViewModel()
             {
+                Id = card.Id,
                 Balance = card.Balance,
                 Number = card.Number
             };
@@ -48,5 +48,6 @@ namespace OnlineBankingApp.Controllers
 
             return View(model);
         }
+
     }
 }

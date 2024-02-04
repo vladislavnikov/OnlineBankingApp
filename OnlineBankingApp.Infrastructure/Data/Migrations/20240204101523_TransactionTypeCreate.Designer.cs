@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineBankingApp.Data;
 
@@ -11,9 +12,11 @@ using OnlineBankingApp.Data;
 namespace OnlineBankingApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240204101523_TransactionTypeCreate")]
+    partial class TransactionTypeCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -305,18 +308,6 @@ namespace OnlineBankingApp.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TransactionTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Deposit"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Withdraw"
-                        });
                 });
 
             modelBuilder.Entity("OnlineBankingApp.Infrastructure.Data.Models.ApplicationUser", b =>
