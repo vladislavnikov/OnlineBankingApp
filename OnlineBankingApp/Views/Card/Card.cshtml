@@ -10,6 +10,10 @@
             <p class="mb-0">@Model.Balance</p>
             <a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@Model.Id"
                class="btn btn-info">Deposit</a>
+            <a asp-area="" asp-controller="Transaction" asp-action="Withdraw" asp-route-cardId="@Model.Id"
+               class="btn btn-info">Withdraw</a>
+            <a asp-area="" asp-controller="Transaction" asp-action="Send" asp-route-cardId="@Model.Id"
+               class="btn btn-info">Send</a>
         </div>
     </div>
 

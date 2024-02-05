@@ -1,0 +1,28 @@
+﻿@using OnlineBankingApp.Core.ViewModels.Transaction;
+@model MakeTransactionViewModel
+
+<div class="text-center row">
+
+    <div class="card col-4" style="width: 20rem; ">
+        <div class="card-body">
+            <form id="account" method="post">
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="text-center mb-3">
+                    <label asp-for="@Model.Amount" class="form-label">Amount:</label>
+                    <input asp-for="@Model.Amount" class="form-control" autocomplete="amount" aria-required="true" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+                <div class="text-center mb-3">
+                    <label asp-for="@Model.SendToNumber" class="form-label">Number:</label>
+                    <input asp-for="@Model.SendToNumber" class="form-control" autocomplete="number" aria-required="true" />
+                    <span asp-validation-for="SendToNumber" class="text-danger"></span>
+                </div>
+                <div class="text-center">
+                    <button id="deposit-amount" type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

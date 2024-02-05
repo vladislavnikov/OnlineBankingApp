@@ -30,6 +30,12 @@ namespace OnlineBankingApp.Infrastructure.Data.Configuration
                     Id = 2,
                     Name = "Withdraw"
                 },
+
+                new TransactionType()
+                {
+                    Id = 3,
+                    Name = "Send"
+                },
              };
 
             return statuses;

@@ -46,6 +46,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Vladislav/Documents/GitHub/OnlineBankingApp/OnlineBankingApp/Views/Transaction/Deposit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cRGVwb3NpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vladislav/Documents/GitHub/OnlineBankingApp/OnlineBankingApp/Views/Transaction/Send.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cU2VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Vladislav/Documents/GitHub/OnlineBankingApp/OnlineBankingApp/Views/Transaction/Withdraw.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNhY3Rpb25cV2l0aGRyYXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Vladislav/Documents/GitHub/OnlineBankingApp/OnlineBankingApp/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

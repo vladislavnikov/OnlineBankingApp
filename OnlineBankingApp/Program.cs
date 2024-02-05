@@ -32,6 +32,7 @@ namespace OnlineBankingApp
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICardService, CardService>();
+            builder.Services.AddScoped<ITransactionService, TransactionService>();
 
             var app = builder.Build();
 
