@@ -10,8 +10,12 @@
 </head>
 <body >
 	<header>
-		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="background-color: #2e2d79;">
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" style="background-color: #2e2d79; z-index:1;">
 			<div class="container-fluid">
+				@if (User?.Identity?.IsAuthenticated ?? false)
+				{
+					<a id="sidebar-open" href="javascript:void(0)" onclick="toogleSidebar()">&#9776;</a>
+				}
 				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="color: white;">OnlineBankingApp</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +40,7 @@
 			</div>
 		</nav>
 	</header>
-
+	<div id="sidebarContainer">@Html.Partial("SideBar")</div>
 	<div class="container">
 		<main role="main" class="pb-3">
 			@RenderBody()
@@ -51,6 +55,16 @@
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>
+	<script>
+		function toogleSidebar() {
+		if (document.getElementById("mySidenav").style.display == "block") {
+			document.getElementById("mySidenav").style.display = "none";
+		}
+		else {
+			document.getElementById("mySidenav").style.display = "block";
+		}
+		}
+	</script>
 	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

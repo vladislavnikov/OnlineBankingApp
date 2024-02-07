@@ -16,18 +16,18 @@ namespace OnlineBankingApp.Controllers
     {
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ICardService cardService;
-		private readonly ITransactionService transactionService;
+        private readonly ITransactionService transactionService;
 
-		public CardController( UserManager<ApplicationUser> _userManager,
+        public CardController(UserManager<ApplicationUser> _userManager,
             ICardService _cardService,
             ITransactionService _transactionService)
-		{
-			this.userManager = _userManager;
-			this.cardService = _cardService;
-			this.transactionService = _transactionService;
-		}
+        {
+            this.userManager = _userManager;
+            this.cardService = _cardService;
+            this.transactionService = _transactionService;
+        }
 
-		[HttpGet]
+        [HttpGet]
         public async Task<IActionResult> Card()
         {
             var user = await userManager.GetUserAsync(User);
@@ -38,20 +38,21 @@ namespace OnlineBankingApp.Controllers
                 await cardService.CreateCardAsync(user.Id);
                 card = await cardService.GetCardAsync(user.Id);
             }
-			var model = await cardService.GetAllCardsAsync(user.Id);
+            var model = await cardService.GetAllCardsAsync(user.Id);
 
-			return View(model);
+            await Sidebar();
+            return View(model);
         }
 
-		[HttpGet]
-		public async Task<IActionResult> CreateCard()
-		{
-			var user = await userManager.GetUserAsync(User);
+        [HttpGet]
+        public async Task<IActionResult> CreateCard()
+        {
+            var user = await userManager.GetUserAsync(User);
 
-			await cardService.CreateCardAsync(user.Id);
+            await cardService.CreateCardAsync(user.Id);
             //?
-			return RedirectToAction("Card");
-		}
+            return RedirectToAction("Card");
+        }
 
         [HttpGet]
         public async Task<IActionResult> AllCardTransactions()
@@ -84,7 +85,8 @@ namespace OnlineBankingApp.Controllers
                 Transactions = c.Transactions
             });
 
-            return PartialView("_Sidebar", cards);
+            ViewBag.Cards = cards;
+            return PartialView("_Sidebar");
         }
 
     }

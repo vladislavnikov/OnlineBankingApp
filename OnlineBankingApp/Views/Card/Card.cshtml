@@ -3,32 +3,32 @@
 @using OnlineBankingApp.Core.ViewModels.Card
 
 <div>
-<div class="text-center row">
-    @foreach (var card in Model)
-    {
-        <div class="card col-4" style="width: 20rem;">
-            <div class="card-body">
-                <h5 class="card-title mt-1">@card.Number</h5>
-                <p class="mb-0">@card.Balance.ToString("F2")</p>
-                <a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@card.Id"
-                   class="btn btn-info">Deposit</a>
-                <a asp-area="" asp-controller="Transaction" asp-action="Withdraw" asp-route-cardId="@card.Id"
-                   class="btn btn-info">Withdraw</a>
-                <a asp-area="" asp-controller="Transaction" asp-action="Send" asp-route-cardId="@card.Id"
-                   class="btn btn-info">Send</a>
-            </div>
+    <div class="text-center row">
+        @foreach (var card in Model)
+        {
+            <div class="card col-4" style="width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title mt-1">@card.Number</h5>
+                    <p class="mb-0">@card.Balance.ToString("F2")</p>
+                    <a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@card.Id"
+                       class="btn btn-info">Deposit</a>
+                    <a asp-area="" asp-controller="Transaction" asp-action="Withdraw" asp-route-cardId="@card.Id"
+                       class="btn btn-info">Withdraw</a>
+                    <a asp-area="" asp-controller="Transaction" asp-action="Send" asp-route-cardId="@card.Id"
+                       class="btn btn-info">Send</a>
+                </div>
 
-            <div>
-                @if (card.Transactions.Count() == 0)
-                {
-                    <p>No transactions!</p>
-                }
-                else
-                {
-                    @Html.Partial("_AllCardTransactions", card.Transactions)
-                }
+                <div>
+                    @if (card.Transactions.Count() == 0)
+                    {
+                        <p>No transactions!</p>
+                    }
+                    else
+                    {
+                        @Html.Partial("_AllCardTransactions", card.Transactions)
+                    }
+                </div>
             </div>
-        </div>
-    }
-</div>
+        }
+    </div>
 </div>

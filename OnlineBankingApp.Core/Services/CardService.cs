@@ -89,7 +89,7 @@ namespace OnlineBankingApp.Core.Services
 
         public async Task<Card> GetCardByNumberAsync(string number)
         {
-           var card = await context.Cards.FirstOrDefaultAsync(c => c.Number == number);
+            var card = await context.Cards.FirstOrDefaultAsync(c => c.Number == number);
 
             return new Card()
             {
@@ -97,7 +97,7 @@ namespace OnlineBankingApp.Core.Services
                 Balance = card.Balance,
                 Number = card.Number,
                 Transactions = card.Transactions,
-                 UserId = card.UserId
+                UserId = card.UserId
             };
         }
 
