@@ -11,5 +11,10 @@ namespace OnlineBankingApp.Core.Contracts
     public interface ICardService
     {
         Task CreateCardAsync(string userId);
+		Task<IEnumerable<CardViewModel>> GetAllCardsAsync(string userId);
+        Task<Card> GetCardAsync(string userId);
+        Task<Card> GetCardAsync(int cardId);
+        Task<Card> GetCardByNumberAsync(string number);
+        Task<ICollection<Card>> GetUserCardsAsync(string userId);
     }
 }

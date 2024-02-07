@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OnlineBankingApp.Core.Contracts;
+using OnlineBankingApp.Core.ViewModels.Card;
 using OnlineBankingApp.Core.ViewModels.Transaction;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
@@ -22,24 +23,41 @@ namespace OnlineBankingApp.Core.Services
 
 
         public async Task DepositAsync(double amount, int cardId)
-		{
-			var card = await context.Cards.FindAsync(cardId);
+        {
+            var card = await context.Cards.FindAsync(cardId);
 
-			var transaction = new Transaction()
-			{
-				Amount = amount,
+            var transaction = new Transaction()
+            {
+                Amount = amount,
                 TransactionTypeId = 1,
-				CardId = cardId,
+                CardId = cardId,
                 Type = "Deposit"
-			};
+            };
 
-			await context.Transactions.AddAsync(transaction);
+            await context.Transactions.AddAsync(transaction);
 
-			card.Balance += amount;
+            card.Balance += amount;
 
-			await context.SaveChangesAsync();
-		}
-		public async Task<IEnumerable<TransactionType>> GetTypeAsync()
+            await context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<TransactionViewModel>> GetAllTransactionsAsync(IEnumerable<int> cardIds)
+        {
+            var transactions = await context.Transactions
+                                            .Where(t => cardIds.Contains(t.CardId))
+                                            .ToListAsync();
+
+            return transactions.Select(c => new TransactionViewModel()
+            {
+                Id = c.Id,
+                Type = c.Type,
+                Amount = c.Amount,
+                TypeId = c.TransactionTypeId
+            });
+        }
+
+
+        public async Task<IEnumerable<TransactionType>> GetTypeAsync()
         {
             return await context.TransactionTypes.ToListAsync();
         }
@@ -49,41 +67,51 @@ namespace OnlineBankingApp.Core.Services
             var card = await context.Cards.FindAsync(cardId);
             var cardToSend = await context.Cards.FindAsync(cardToSendId);
 
-            
-                var transaction = new Transaction()
-                {
-                    Amount = amount,
-                    TransactionTypeId = 3,
-                    CardId = cardId,
-                    Type = "Send"
-                };
 
-                await context.Transactions.AddAsync(transaction);
+            var transaction1 = new Transaction()
+            {
+                Amount = amount,
+                TransactionTypeId = 3,
+                CardId = cardId,
+                Type = "Send"
+            };
 
-                card.Balance -= amount;
-                cardToSend.Balance += amount;
+            var transaction2 = new Transaction()
+            {
+                Amount = amount,
+                TransactionTypeId = 4,
+                CardId = cardToSend.Id,
+                Type = "SendToMe"
+            };
 
-                await context.SaveChangesAsync();
-            
+            await context.Transactions.AddAsync(transaction1);
+            await context.Transactions.AddAsync(transaction2);
+
+            card.Balance -= amount;
+            cardToSend.Balance += amount;
+
+            await context.SaveChangesAsync();
         }
 
         public async Task WithdrawAsync(double аmount, int cardId)
         {
-			var card = await context.Cards.FindAsync(cardId);
+            var card = await context.Cards.FindAsync(cardId);
 
-			var transaction = new Transaction()
-			{
-				Amount = аmount,
-				TransactionTypeId = 2,
-				CardId = cardId,
-				Type = "Withdraw"
-			};
+            var transaction = new Transaction()
+            {
+                Amount = аmount,
+                TransactionTypeId = 2,
+                CardId = cardId,
+                Type = "Withdraw"
+            };
 
-			await context.Transactions.AddAsync(transaction);
+            await context.Transactions.AddAsync(transaction);
 
-			card.Balance -= аmount;
+            card.Balance -= аmount;
 
-			await context.SaveChangesAsync();
-		}
+            await context.SaveChangesAsync();
+        }
+
+
     }
 }

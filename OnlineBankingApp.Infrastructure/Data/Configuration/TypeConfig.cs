@@ -36,6 +36,11 @@ namespace OnlineBankingApp.Infrastructure.Data.Configuration
                     Id = 3,
                     Name = "Send"
                 },
+                 new TransactionType()
+                {
+                    Id = 4,
+                    Name = "SendToMe"
+                }
              };
 
             return statuses;

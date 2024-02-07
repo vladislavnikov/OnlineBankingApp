@@ -1,0 +1,18 @@
+﻿@model IEnumerable<OnlineBankingApp.Core.ViewModels.Transaction.TransactionViewModel>
+
+
+<div class="text-center row">
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Type</td>
+                <td>@item.Amount</td>
+            </tr>
+        }
+    </table>
+</div>

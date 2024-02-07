@@ -316,6 +316,16 @@ namespace OnlineBankingApp.Data.Migrations
                         {
                             Id = 2,
                             Name = "Withdraw"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Send"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "SendToMe"
                         });
                 });
 

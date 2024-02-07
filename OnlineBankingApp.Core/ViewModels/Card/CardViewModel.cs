@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineBankingApp.Core.ViewModels.Transaction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace OnlineBankingApp.Core.ViewModels.Card
         public int Id { get; set; }
         public string Number { get; set; }
         public double Balance { get; set; }
+        public IEnumerable<TransactionViewModel> Transactions { get; set; }
     }
 }

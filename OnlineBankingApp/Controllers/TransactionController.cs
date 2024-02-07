@@ -11,16 +11,18 @@ namespace OnlineBankingApp.Controllers
 {
     public class TransactionController : Controller
     {
-        private readonly ApplicationDbContext context;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ITransactionService transactionService;
+        private readonly ICardService cardService;
 
-        public TransactionController(ApplicationDbContext _context, UserManager<ApplicationUser> _userManager, ITransactionService _transactionService)
+        public TransactionController(UserManager<ApplicationUser> _userManager,
+            ITransactionService _transactionService,
+            ICardService _cardService)
         {
-            this.context = _context;
+            
             this.userManager = _userManager;
             this.transactionService = _transactionService;
-
+            this.cardService = _cardService;
         }
 
 
@@ -34,12 +36,9 @@ namespace OnlineBankingApp.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Deposit(MakeTransactionViewModel model)
-        {
-            var user = await userManager.GetUserAsync(User);
-
-            var card = await context.Cards.FirstOrDefaultAsync(f => f.UserId == user.Id);
-
-            
+        { 
+            var card = await cardService.GetCardAsync(model.CardId);
+            //GetCard
 
             if (!ModelState.IsValid)
             {
@@ -72,7 +71,7 @@ namespace OnlineBankingApp.Controllers
         {
             var user = await userManager.GetUserAsync(User);
 
-            var card = await context.Cards.FirstOrDefaultAsync(f => f.UserId == user.Id);
+            var card = await cardService.GetCardAsync(user.Id);
 
             if (!ModelState.IsValid)
             {
@@ -106,8 +105,8 @@ namespace OnlineBankingApp.Controllers
         {
             var user = await userManager.GetUserAsync(User);
 
-            var card = await context.Cards.FirstOrDefaultAsync(c => c.UserId == user.Id);
-            var cardToSend = await context.Cards.FirstOrDefaultAsync(c => c.Number == sendToNumber);
+            var card = await cardService.GetCardAsync(user.Id);
+            var cardToSend = await cardService.GetCardByNumberAsync(sendToNumber);
 
             if (!ModelState.IsValid)
             {
@@ -130,8 +129,24 @@ namespace OnlineBankingApp.Controllers
                 ModelState.AddModelError("", "Something went wrong!");
                 return View(model);
             }
+        }
 
+        [HttpGet]
+        public async Task<IActionResult> AllCardTransactions()
+        {
+            var user = await userManager.GetUserAsync(User);
+            var cards = await cardService.GetAllCardsAsync(user.Id);
 
+            var transactions = new List<IEnumerable<TransactionViewModel>>();
+
+            foreach (var card in cards)
+            {
+                var cardTransactions = await transactionService.GetAllTransactionsAsync(new List<int> { card.Id });
+                transactions.Add(cardTransactions);
+            }
+
+            return PartialView("_AllCardTransactions", transactions);
         }
     }
+
 }

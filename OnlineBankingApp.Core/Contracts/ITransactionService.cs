@@ -1,4 +1,5 @@
-﻿using OnlineBankingApp.Core.ViewModels.Transaction;
+﻿using OnlineBankingApp.Core.ViewModels.Card;
+using OnlineBankingApp.Core.ViewModels.Transaction;
 using OnlineBankingApp.Infrastructure.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,7 @@ namespace OnlineBankingApp.Core.Contracts
         Task WithdrawAsync(double amount, int cardId);
         Task SendAsync(double amount,int cardId, int cardToSendId);
         Task<IEnumerable<TransactionType>> GetTypeAsync();
+        Task<IEnumerable<TransactionViewModel>> GetAllTransactionsAsync(IEnumerable<int> cardIds);
+
     }
 }

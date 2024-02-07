@@ -1,4 +1,7 @@
-﻿using OnlineBankingApp.Core.Contracts;
+﻿using Microsoft.EntityFrameworkCore;
+using OnlineBankingApp.Core.Contracts;
+using OnlineBankingApp.Core.ViewModels.Card;
+using OnlineBankingApp.Core.ViewModels.Transaction;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
 using System;
@@ -34,6 +37,75 @@ namespace OnlineBankingApp.Core.Services
 
             context.Cards.Add(card);
             await context.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<CardViewModel>> GetAllCardsAsync(string userId)
+        {
+            var cards = await context.Cards.Include(c => c.Transactions)
+            .Where(card => card.UserId == userId)
+            .ToListAsync();
+
+            return cards.Select(c => new CardViewModel()
+            {
+                Id = c.Id,
+                Balance = c.Balance,
+                Number = c.Number,
+                Transactions = c.Transactions.Select(t => new TransactionViewModel
+                {
+                    Type = t.Type,
+                    Amount = t.Amount,
+                })
+            });
+        }
+
+        public async Task<Card> GetCardAsync(string userId)
+        {
+            var card = await context.Cards.FirstOrDefaultAsync(c => c.UserId == userId);
+
+            return new Card()
+            {
+                Id = card.Id,
+                Balance = card.Balance,
+                Number = card.Number,
+                Transactions = card.Transactions,
+                UserId = userId
+
+            };
+        }
+
+        public async Task<Card> GetCardAsync(int cardId)
+        {
+            var card = await context.Cards.FirstOrDefaultAsync(c => c.Id == cardId);
+
+            return new Card()
+            {
+                Id = card.Id,
+                Balance = card.Balance,
+                Number = card.Number,
+                Transactions = card.Transactions,
+                UserId = card.UserId
+            };
+        }
+
+        public async Task<Card> GetCardByNumberAsync(string number)
+        {
+           var card = await context.Cards.FirstOrDefaultAsync(c => c.Number == number);
+
+            return new Card()
+            {
+                Id = card.Id,
+                Balance = card.Balance,
+                Number = card.Number,
+                Transactions = card.Transactions,
+                 UserId = card.UserId
+            };
+        }
+
+        public async Task<ICollection<Card>> GetUserCardsAsync(string userId)
+        {
+            var cards = await context.Cards.Where(c => c.UserId == userId).ToListAsync();
+
+            return cards;
         }
     }
 }
