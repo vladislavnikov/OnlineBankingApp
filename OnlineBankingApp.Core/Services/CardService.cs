@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿﻿using Microsoft.EntityFrameworkCore;
 using OnlineBankingApp.Core.Contracts;
 using OnlineBankingApp.Core.ViewModels.Card;
 using OnlineBankingApp.Core.ViewModels.Transaction;
@@ -20,7 +20,7 @@ namespace OnlineBankingApp.Core.Services
         {
             context = _context;
         }
-        public async Task CreateCardAsync(string userId)
+        public async Task<int> CreateCardAsync(string userId)
         {
             int mii = 4;
             Random random = new Random();
@@ -37,6 +37,8 @@ namespace OnlineBankingApp.Core.Services
 
             context.Cards.Add(card);
             await context.SaveChangesAsync();
+
+            return card.Id;
         }
 
         public async Task<IEnumerable<CardViewModel>> GetAllCardsAsync(string userId)
@@ -58,32 +60,41 @@ namespace OnlineBankingApp.Core.Services
             });
         }
 
-        public async Task<Card> GetCardAsync(string userId)
+        public async Task<CardViewModel> GetCardAsync(string userId)
         {
             var card = await context.Cards.FirstOrDefaultAsync(c => c.UserId == userId);
 
-            return new Card()
+            return new CardViewModel()
             {
                 Id = card.Id,
                 Balance = card.Balance,
                 Number = card.Number,
-                Transactions = card.Transactions,
-                UserId = userId
+                Transactions = card.Transactions.Select(t => new TransactionViewModel
+                {
+                    Type = t.Type,
+                    Amount = t.Amount,
+                    Date = t.Date
+                })
 
             };
         }
 
-        public async Task<Card> GetCardAsync(int cardId)
+        public async Task<CardViewModel> GetCardAsync(int cardId)
         {
             var card = await context.Cards.FirstOrDefaultAsync(c => c.Id == cardId);
 
-            return new Card()
+            return new CardViewModel()
             {
                 Id = card.Id,
                 Balance = card.Balance,
                 Number = card.Number,
-                Transactions = card.Transactions,
-                UserId = card.UserId
+                Transactions = card.Transactions.Select(t => new TransactionViewModel
+                {
+                    Type = t.Type,
+                    Amount = t.Amount,
+                    Date = t.Date
+                })
+
             };
         }
 

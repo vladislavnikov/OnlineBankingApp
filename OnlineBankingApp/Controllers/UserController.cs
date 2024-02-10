@@ -57,7 +57,6 @@ namespace OnlineBankingApp.Controllers
                 UserName = (model.FirstName + model.LastName).ToLower(),
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                BirthDate = model.BirthDate,
                 Email = model.Email
             };
 
@@ -105,8 +104,8 @@ namespace OnlineBankingApp.Controllers
             if (user != null)
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
-
-                return RedirectToAction("Card", "Card");
+                //
+                return RedirectToAction("Index", "Card");
             }
 
             ModelState.AddModelError("", "Invalid login");

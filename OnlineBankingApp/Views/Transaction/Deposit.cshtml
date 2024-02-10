@@ -1,23 +1,31 @@
 ﻿@using OnlineBankingApp.Core.ViewModels.Transaction;
 @model MakeTransactionViewModel
 
-<div class="text-center row">
+<style>
+	.deposit-container {
+		margin: 10% auto 0 auto;
+		background-color: white;
+		width: 300px;
+		min-width: 300px;
+		max-width: 350px;
+		border-radius: 15px;
+		padding: 0 5px 5px 5px;
+		box-shadow: 0px 0px 15px 4px rgba(61,27,79,0.8);
+	}</style>
 
-    <div class="card col-4" style="width: 20rem; ">
-        <div class="card-body">
-            <form id="account" method="post">
-                <hr />
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="text-center mb-3">
-                    <label asp-for="@Model.Amount" class="form-label">Amount:</label>
-                    <input asp-for="@Model.Amount" class="form-control" autocomplete="amount" aria-required="true" />
-                    <span asp-validation-for="Amount" class="text-danger"></span>
-                </div>
-                <div class="text-center">
-                    <button id="deposit-amount" type="submit" class="btn btn-primary">Deposit</button>
-                </div>
-            </form>
-        </div>
-    </div>
-
+<div class="deposit-container">
+	<form id="account" method="post">
+		<hr />
+		<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+		<div class="text-center mb-3">
+			<label asp-for="@Model.Amount" class="form-label">Amount:</label>
+			<input asp-for="@Model.Amount" class="form-control" autocomplete="amount" aria-required="true" />
+			<span asp-validation-for="Amount" class="text-danger"></span>
+		</div>
+		<div class="text-center">
+			<button type="submit" class="transaction-btn">Deposit</button>
+		</div>
+	</form>
 </div>
+
+

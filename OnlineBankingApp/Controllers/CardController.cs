@@ -28,20 +28,19 @@ namespace OnlineBankingApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Card()
+        public async Task<IActionResult> Index()
         {
-            var user = await userManager.GetUserAsync(User);
-            var card = await cardService.GetCardAsync(user.Id);
+            await Sidebar();
+            return View();
+        }
 
-            if (card == null)
-            {
-                await cardService.CreateCardAsync(user.Id);
-                card = await cardService.GetCardAsync(user.Id);
-            }
-            var model = await cardService.GetAllCardsAsync(user.Id);
+        [HttpGet]
+        public async Task<IActionResult> Card(int cardId)
+        {
+            var card = await cardService.GetCardAsync(cardId);
 
             await Sidebar();
-            return View(model);
+            return View(card);
         }
 
         [HttpGet]
@@ -49,9 +48,9 @@ namespace OnlineBankingApp.Controllers
         {
             var user = await userManager.GetUserAsync(User);
 
-            await cardService.CreateCardAsync(user.Id);
-            //?
-            return RedirectToAction("Card");
+            int cardId = await cardService.CreateCardAsync(user.Id);
+
+            return RedirectToAction("Card", new { cardId = cardId });
         }
 
         [HttpGet]

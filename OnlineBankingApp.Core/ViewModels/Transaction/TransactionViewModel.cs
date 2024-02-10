@@ -11,6 +11,8 @@ namespace OnlineBankingApp.Core.ViewModels.Transaction
         public int Id { get; set; }
         public string Type { get; set; }
         public double Amount { get; set; }
+
+        public DateTime Date { get; set; }
         public int TypeId { get; set; }
     }
 }

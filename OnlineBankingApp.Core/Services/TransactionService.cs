@@ -31,7 +31,8 @@ namespace OnlineBankingApp.Core.Services
                 Amount = amount,
                 TransactionTypeId = 1,
                 CardId = cardId,
-                Type = "Deposit"
+                Type = "Deposit",
+                Date = DateTime.UtcNow
             };
 
             await context.Transactions.AddAsync(transaction);
@@ -52,7 +53,8 @@ namespace OnlineBankingApp.Core.Services
                 Id = c.Id,
                 Type = c.Type,
                 Amount = c.Amount,
-                TypeId = c.TransactionTypeId
+                TypeId = c.TransactionTypeId,
+                Date = c.Date
             });
         }
 
@@ -73,7 +75,8 @@ namespace OnlineBankingApp.Core.Services
                 Amount = amount,
                 TransactionTypeId = 3,
                 CardId = cardId,
-                Type = "Send"
+                Type = "Send",
+                Date = DateTime.UtcNow
             };
 
             var transaction2 = new Transaction()
@@ -81,7 +84,8 @@ namespace OnlineBankingApp.Core.Services
                 Amount = amount,
                 TransactionTypeId = 4,
                 CardId = cardToSend.Id,
-                Type = "SendToMe"
+                Type = "SendToMe",
+                Date = DateTime.UtcNow
             };
 
             await context.Transactions.AddAsync(transaction1);
@@ -102,7 +106,8 @@ namespace OnlineBankingApp.Core.Services
                 Amount = аmount,
                 TransactionTypeId = 2,
                 CardId = cardId,
-                Type = "Withdraw"
+                Type = "Withdraw",
+                Date = DateTime.UtcNow
             };
 
             await context.Transactions.AddAsync(transaction);

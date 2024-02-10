@@ -273,6 +273,9 @@ namespace OnlineBankingApp.Data.Migrations
                     b.Property<int>("CardId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("TransactionTypeId")
                         .HasColumnType("int");
 
@@ -325,16 +328,13 @@ namespace OnlineBankingApp.Data.Migrations
                         new
                         {
                             Id = 4,
-                            Name = "SendToMe"
+                            Name = "SentToMe"
                         });
                 });
 
             modelBuilder.Entity("OnlineBankingApp.Infrastructure.Data.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
                         .IsRequired()

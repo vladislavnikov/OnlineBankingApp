@@ -17,19 +17,26 @@ html {
     min-height: 100%;
 }
 
+header {
+    height: 8%;
+}
+
 body {
     margin-bottom: 60px;
+    height: 80%;
+    overflow: hidden;
     background-image: url('https://static.vecteezy.com/system/resources/previews/006/852/804/non_2x/abstract-blue-background-simple-design-for-your-website-free-vector.jpg');
 }
 
 footer {
     background-color: #4e51a2;
+    height: 8%;
 }
 
 
 #mySidenav {
     display: none;
-    width: 250px;
+    width: 265px;
     height: 100vh;
     position: fixed;
     z-index: 0;
@@ -43,7 +50,7 @@ footer {
 }
 
     #mySidenav a {
-        padding: 8px 8px 8px 32px;
+        padding: 8px 8px 8px 8px;
         text-decoration: none;
         font-size: 25px;
         color: #818181;
@@ -68,3 +75,65 @@ footer {
     text-decoration: none;
     margin: 0 5px 0 0;
 }
+
+.transaction-btn {
+    background-color: deepskyblue;
+    color:white;
+    padding:5px;
+    border: none;
+    border-radius:15px;
+}
+
+.transaction-btn:hover {
+    color:black;
+}
+
+
+
+.user-btn {
+    background-color: deepskyblue;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+}
+
+    .user-btn:hover {
+        color:black;
+    }
+
+#leave-btn {
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    color: black;
+    padding: 5px;
+}
+
+#leave-btn:hover {
+    background-color: lightcyan;
+}
+
+#new-card-btn {
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    color: black;
+    padding: 2px;
+    width: 45%;
+}
+
+    #new-card-btn:hover {
+        background-color: darkmagenta;
+    }
+
+
+.number-btn {
+    background-color: lightblue;
+    border-radius: 15px;
+    color: lightblue;
+    margin: 5px;
+    padding: 0;
+}
+

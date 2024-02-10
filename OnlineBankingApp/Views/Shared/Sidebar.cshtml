@@ -1,16 +1,26 @@
 ﻿
+<style>
+    #your-cards{
+    font-size: large;
+    font: bold;
+    margin: 5px 0 0 5px;
+    }
+</style>
+
+
 <div id="mySidenav">
-    <p>Your Cards:</p>
+    <p id="your-cards">Your Cards:</p>
     @if (ViewBag.Cards != null)
     {
         @foreach (var card in ViewBag.Cards)
         {
-            <a asp-area="" asp-controller="Card" asp-action="GetCard" asp-route-cardId="@card.Id"
-               class="btn btn-info">@card.Number</a>
+            <a asp-area="" asp-controller="Card" asp-action="Card" asp-route-cardId="@card.Id"
+               class="number-btn">@System.Text.RegularExpressions.Regex.Replace(card.Number, ".{4}", "$0 ")</a>
         }
     }
     else
     {
         <p>No cards available.</p>
     }
+    <a id="new-card-btn" asp-area="" asp-controller="Card" asp-action="CreateCard">NewCard</a>
 </div>

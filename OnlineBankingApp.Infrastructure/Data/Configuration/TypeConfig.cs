@@ -39,7 +39,7 @@ namespace OnlineBankingApp.Infrastructure.Data.Configuration
                  new TransactionType()
                 {
                     Id = 4,
-                    Name = "SendToMe"
+                    Name = "SentToMe"
                 }
              };
 

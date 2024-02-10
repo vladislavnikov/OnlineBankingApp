@@ -13,17 +13,19 @@ namespace OnlineBankingApp.Core.ViewModels.Transaction
     {
         public MakeTransactionViewModel()
         {
-            Type = new List<TransactionType>(); 
+            Type = new List<TransactionType>();
         }
         public double Amount { get; set; }
 
         //?
         public string? SendToNumber { get; set; }
 
-        public int CardId{ get; set; }
+        public int CardId { get; set; }
 
-		public int TypeId { get; set; }
+        public DateTime Date { get; set; }
 
-		public IEnumerable<TransactionType> Type { get; set; }
+        public int TypeId { get; set; }
+
+        public IEnumerable<TransactionType> Type { get; set; }
     }
 }

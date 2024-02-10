@@ -1,34 +1,72 @@
-﻿@model IEnumerable<CardViewModel>
+﻿@model CardViewModel
 @using OnlineBankingApp.Core.ViewModels.Transaction
 @using OnlineBankingApp.Core.ViewModels.Card
 
-<div>
-    <div class="text-center row">
-        @foreach (var card in Model)
-        {
-            <div class="card col-4" style="width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title mt-1">@card.Number</h5>
-                    <p class="mb-0">@card.Balance.ToString("F2")</p>
-                    <a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@card.Id"
-                       class="btn btn-info">Deposit</a>
-                    <a asp-area="" asp-controller="Transaction" asp-action="Withdraw" asp-route-cardId="@card.Id"
-                       class="btn btn-info">Withdraw</a>
-                    <a asp-area="" asp-controller="Transaction" asp-action="Send" asp-route-cardId="@card.Id"
-                       class="btn btn-info">Send</a>
-                </div>
+<style>
 
-                <div>
-                    @if (card.Transactions.Count() == 0)
-                    {
-                        <p>No transactions!</p>
-                    }
-                    else
-                    {
-                        @Html.Partial("_AllCardTransactions", card.Transactions)
-                    }
-                </div>
-            </div>
-        }
-    </div>
+	.card-container {
+		width: 300px;
+		min-width: 300px;
+		max-width: 350px;
+		margin: 10% auto 0 auto;
+	}
+	
+	.body{
+		background-color: white;
+		border-radius: 15px;
+		box-shadow: 0px 0px 15px 4px rgba(61,27,79,0.8);
+	}
+
+	.card-body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.transactions-body{
+	  margin-top: 10px;
+	}
+
+	#info{
+		align-items: center;
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	.btn{
+		background-color: cornflowerblue;
+		border-radius: 15px;
+		color: white;
+		padding: 5px;
+		margin: 5px;
+	}
+
+</style>
+
+<div class="card-container">
+		<div class="card-body body">
+		<h5 class="card-title mt-1">@System.Text.RegularExpressions.Regex.Replace(Model.Number, ".{4}", "$0 ")</h5>
+		<p class="card-text">Balance: @Model.Balance.ToString("F2")$</p>
+		<div >
+				<a asp-area="" asp-controller="Transaction" asp-action="Deposit" asp-route-cardId="@Model.Id"
+				   class="btn">Deposit</a>
+				<a asp-area="" asp-controller="Transaction" asp-action="Withdraw" asp-route-cardId="@Model.Id"
+				   class="btn">Withdraw</a>
+				<a asp-area="" asp-controller="Transaction" asp-action="Send" asp-route-cardId="@Model.Id"
+				   class="btn">Send</a>
+			</div>
+		</div>
+
+		<div class="transactions-body body">
+			@if (Model.Transactions.Count() == 0)
+			{
+				<p id="info">No transactions!</p>
+			}
+			else
+			{
+				@Html.Partial("_AllCardTransactions", Model.Transactions)
+			}
+		</div>
 </div>

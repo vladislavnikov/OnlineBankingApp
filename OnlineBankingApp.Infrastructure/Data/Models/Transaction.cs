@@ -17,6 +17,8 @@ namespace OnlineBankingApp.Infrastructure.Data.Models
 
         public double Amount { get; set; }
 
+        public DateTime Date { get; set; }
+
         [Required]
         public int TransactionTypeId { get; set; }
 
