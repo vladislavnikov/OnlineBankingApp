@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using OnlineBankingApp.Areas.Admin.Models;
 using OnlineBankingApp.Core.ViewModels.User;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
@@ -104,9 +106,22 @@ namespace OnlineBankingApp.Controllers
             if (user != null)
             {
                 var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
-                //
+                if (user.Id == "au1")
+                {
+                    if (await userManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        return RedirectToAction("Admin", "Admin", new { area = "Admin" });
+                    }
+                    else {
+                        userManager.AddToRoleAsync(user, "Admin").Wait();
+                        return RedirectToAction("Admin", "Admin", new { area = "Admin" });
+                    }
+                }
+
                 return RedirectToAction("Index", "Card");
             }
+
+
 
             ModelState.AddModelError("", "Invalid login");
 

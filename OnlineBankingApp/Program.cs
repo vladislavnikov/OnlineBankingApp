@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using OnlineBankingApp.Areas.Contracts;
+using OnlineBankingApp.Areas.Service;
 using OnlineBankingApp.Core.Contracts;
 using OnlineBankingApp.Core.Services;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
+using System;
 
 namespace OnlineBankingApp
 {
@@ -33,10 +36,15 @@ namespace OnlineBankingApp
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<ICardService, CardService>();
             builder.Services.AddScoped<ITransactionService, TransactionService>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Account/Login";
+            });
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -44,7 +52,6 @@ namespace OnlineBankingApp
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -54,6 +61,10 @@ namespace OnlineBankingApp
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "Admin",
+                pattern: "{area:exists}/{controller=Admin}/{action=Admin}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",

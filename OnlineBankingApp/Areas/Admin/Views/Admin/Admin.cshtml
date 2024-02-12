@@ -1,0 +1,96 @@
+﻿
+<style>
+	table, td, th {
+		border: 2px solid black;
+		background-color: white;
+		text-align: left;
+	}
+
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+
+	th, td {
+		padding: 5px;
+	}
+
+	p {
+		color: white;
+		font-size: larger;
+	}
+
+	.delete-btn {
+		height: 25px;
+		width: 25px;
+		color: white;
+		background-color: red;
+		text-decoration: underline;
+	}
+</style>
+
+<p><b>Users List</b></p>
+
+@if (ViewBag.Users.Count == 0)
+{
+	<p>No users!</p>
+}
+else
+{
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			<th>Email</th>
+			<th>Cards</th>
+			<th>Delete</th>
+		</tr>
+		@foreach (var user in ViewBag.Users)
+		{
+			<tr>
+				<td>@user.Id</td>
+				<td>@user.FirstName</td>
+				<td>@user.LastName</td>
+				<td>@user.Email</td>
+				<td>@user.Cards</td>
+				<td>
+					<form class="input-group-sm" asp-area="Admin" asp-route-userId="@user.Id" asp-controller="Admin" asp-action="DeleteUser" method="post">
+						<input type="submit" value="&#x2715;" class="delete-btn" />
+					</form>
+				</td>
+			</tr>
+		}
+	</table>
+}
+<p><b>Cards List</b></p>
+@if (ViewBag.Users.Count == 0)
+{
+	<p>No users!</p>
+}
+else
+{
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>Number</th>
+			<th>Balance</th>
+			<th>UserId</th>
+			<th>Delete</th>
+		</tr>
+		@foreach (var card in ViewBag.Cards)
+		{
+			<tr>
+				<td>@card.Id</td>
+				<td>@System.Text.RegularExpressions.Regex.Replace(card.Number, ".{4}", "$0 ")</td>
+				<td>@card.Balance.ToString("F2")$</td>
+				<td>@card.UserId</td>
+				<td>
+					<form class="input-group-sm" asp-area="Admin" asp-route-cardId="@card.Id" asp-controller="Admin" asp-action="DeleteCard" method="post">
+						<input type="submit" value="&#x2715;" class="delete-btn" />
+					</form>
+				</td>
+			</tr>
+		}
+	</table>
+}

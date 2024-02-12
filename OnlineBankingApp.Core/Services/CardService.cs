@@ -64,6 +64,11 @@ namespace OnlineBankingApp.Core.Services
         {
             var card = await context.Cards.FirstOrDefaultAsync(c => c.UserId == userId);
 
+            if (card == null)
+            {
+                return new CardViewModel();
+            }
+
             return new CardViewModel()
             {
                 Id = card.Id,
@@ -102,7 +107,12 @@ namespace OnlineBankingApp.Core.Services
         {
             var card = await context.Cards.FirstOrDefaultAsync(c => c.Number == number);
 
-            return new Card()
+			if (card == null)
+			{
+				return null;
+			}
+
+			return new Card()
             {
                 Id = card.Id,
                 Balance = card.Balance,
