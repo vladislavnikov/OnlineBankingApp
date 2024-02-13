@@ -26,7 +26,7 @@ To deploy this project add the connection string in  appsettings.json for SSMS
     "DefaultConnection": "Server=myServerAddress;Database=myDataBase;User Id=myUsername;password=myPassword;Trusted_Connection=False;MultipleActiveResultSets=true;"
   }
 ```
-
+Then run the command update-database in the Package Manager Console for .Infrastructure project
 
 ## Screenshots:
 
