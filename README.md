@@ -38,8 +38,7 @@ To deploy this project add the connection string in  appsettings.json for SSMS
 ![Screenshot (10)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/f96f3804-968b-4a6e-80d8-3f00a8ec25cf)
 ![Screenshot (11)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/bd089c16-2474-4b1a-ace5-347a45243a4f)
 ![Screenshot (12)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/2fb3cc98-fc10-4e0b-b7d2-6a6461360621)
-
 ![Screenshot (15)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/91f9a948-4991-497c-b689-ae24d3a17d32)
 ![Screenshot (4)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/3360f85f-bb52-4c08-be06-4cbb8cde819b)
 ![Screenshot (16)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/7eaa934f-46cd-475c-a088-6ab91680772f)
-![Screenshot (17)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/f845f242-f163-4f00-8261-80d87cee9ae8)
+![Screenshot (18)](https://github.com/vladislavnikov/OnlineBankingApp/assets/114019283/5a335a7d-fdd9-41b1-a97c-b4ce5d79b56b)
