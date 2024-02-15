@@ -24,8 +24,8 @@ To deploy this project add the connection string in  appsettings.json for SSMS
 
 ```bash
  "ConnectionStrings": {
-    "DefaultConnection": "Server=myServerAddress;Database=myDataBase;User Id=myUsername;password=myPassword;Trusted_Connection=False;MultipleActiveResultSets=true;"
-  }
+  "DefaultConnection": "Server=;Database=BankDb;User Id=;Password=;MultipleActiveResultSets=true;TrustServerCertificate=True;"
+},
 ```
 Then run the command update-database in the Package Manager Console for .Infrastructure project
 
