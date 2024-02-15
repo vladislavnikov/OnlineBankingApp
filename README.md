@@ -10,7 +10,8 @@ Web application for managing debit cards and making transactions.
  - [ASP.NET Core 8.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-7.0)
   - [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://www.javascript.com/)
-
+- [NUnit](https://nunit.org/)
+  
 - ## Admin:
 
 | Email | Password     |         
