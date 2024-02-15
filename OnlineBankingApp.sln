@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineBankingApp.Tests", "OnlineBankingApp.Tests\OnlineBankingApp.Tests.csproj", "{AD874EBC-085F-48D8-B3CC-9E5DAC5C3856}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{9DB6BEBC-1FB1-4920-9DC9-91F699FD943C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB6BEBC-1FB1-4920-9DC9-91F699FD943C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB6BEBC-1FB1-4920-9DC9-91F699FD943C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD874EBC-085F-48D8-B3CC-9E5DAC5C3856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD874EBC-085F-48D8-B3CC-9E5DAC5C3856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD874EBC-085F-48D8-B3CC-9E5DAC5C3856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD874EBC-085F-48D8-B3CC-9E5DAC5C3856}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

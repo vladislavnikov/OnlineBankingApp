@@ -274,3 +274,4 @@ C:\Users\Vladislav\Documents\GitHub\OnlineBankingApp\OnlineBankingApp\bin\Debug\
 C:\Users\Vladislav\Documents\GitHub\OnlineBankingApp\OnlineBankingApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Vladislav\Documents\GitHub\OnlineBankingApp\OnlineBankingApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Users\Vladislav\Documents\GitHub\OnlineBankingApp\OnlineBankingApp\obj\Debug\net8.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Vladislav\Documents\GitHub\OnlineBankingApp\OnlineBankingApp\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
