@@ -12,7 +12,7 @@ Web application for managing debit cards and making transactions.
 - [JavaScript](https://www.javascript.com/)
 - [NUnit](https://nunit.org/)
   
-- ## Admin:
+## Admin:
 
 | Email | Password     |         
 | :-------- | :------- |
