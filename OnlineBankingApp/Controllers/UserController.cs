@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OnlineBankingApp.Areas.Admin.Models;
+using OnlineBankingApp.Core.Contracts;
 using OnlineBankingApp.Core.ViewModels.User;
 using OnlineBankingApp.Data;
 using OnlineBankingApp.Infrastructure.Data.Models;
@@ -19,15 +20,19 @@ namespace OnlineBankingApp.Controllers
 
         private readonly RoleManager<IdentityRole> roleManager;
 
-        public UserController(ApplicationDbContext _context,
+		private readonly IUserService userService;
+
+		public UserController(ApplicationDbContext _context,
             UserManager<ApplicationUser> _userManager,
             SignInManager<ApplicationUser> _signInManager,
-            RoleManager<IdentityRole> _roleManager)
+            RoleManager<IdentityRole> _roleManager,
+            IUserService _userService)
         {
-            context = _context;
-            userManager = _userManager;
-            signInManager = _signInManager;
-            roleManager = _roleManager;
+			this.context = _context;
+			this.userManager = _userManager;
+			this.signInManager = _signInManager;
+			this.roleManager = _roleManager;
+            this.userService = _userService;
         }
 
         [HttpGet]
@@ -128,5 +133,16 @@ namespace OnlineBankingApp.Controllers
             return View(model);
         }
 
-    }
+
+		[HttpGet]
+		public async Task<IActionResult> Info()
+		{
+            var user = await userManager.GetUserAsync(User);
+
+            var model = await userService.GetUserAsync(user.Id);
+
+            return View(model);
+		}
+
+	}
 }

@@ -37,6 +37,7 @@ namespace OnlineBankingApp
             builder.Services.AddScoped<ICardService, CardService>();
             builder.Services.AddScoped<ITransactionService, TransactionService>();
             builder.Services.AddScoped<IAdminService, AdminService>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {
