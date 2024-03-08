@@ -10,8 +10,9 @@ Web application for managing debit cards and making transactions.
  - [ASP.NET Core 8.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-7.0)
   - [Bootstrap](https://getbootstrap.com/)
 - [JavaScript](https://www.javascript.com/)
-
-- ## Admin:
+- [NUnit](https://nunit.org/)
+  
+## Admin:
 
 | Email | Password     |         
 | :-------- | :------- |
@@ -23,8 +24,8 @@ To deploy this project add the connection string in  appsettings.json for SSMS
 
 ```bash
  "ConnectionStrings": {
-    "DefaultConnection": "Server=myServerAddress;Database=myDataBase;User Id=myUsername;password=myPassword;Trusted_Connection=False;MultipleActiveResultSets=true;"
-  }
+  "DefaultConnection": "Server=;Database=BankDb;User Id=;Password=;MultipleActiveResultSets=true;TrustServerCertificate=True;"
+},
 ```
 Then run the command update-database in the Package Manager Console for .Infrastructure project
 
