@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OnlineBankingApp.Core.Contracts;
 using OnlineBankingApp.Core.ViewModels.User;
 using OnlineBankingApp.Data;
@@ -19,7 +20,19 @@ namespace OnlineBankingApp.Core.Services
 		{
 			context = _context;
 		}
-		public async Task<UserViewModel> GetUserAsync(string userId)
+
+        public async void EditUserAsync(string userId, EditUserViewModel model)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+
+			user.FirstName = model.FirstName;
+			user.LastName = model.LastName;
+			user.Email = model.Email;
+
+			await context.SaveChangesAsync();
+        }
+
+        public async Task<UserViewModel> GetUserAsync(string userId)
 		{
 			var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
 

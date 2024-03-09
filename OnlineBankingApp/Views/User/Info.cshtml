@@ -1,19 +1,43 @@
 ﻿@using OnlineBankingApp.Core.ViewModels.User
 @model UserViewModel
 
-<div class="row">
-    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-        <div class="form-group">
-            <label asp-for="FirstName">First Name:</label>
-            <label asp-for="FirstName">@Model.FirstName</label>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastName">Last Name:</label>
-            <label asp-for="LastName">@Model.LastName</label>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email">Email:</label>
-            <label asp-for="Email">@Model.Email</label>
-        </div>
+<style>
+    .info-wrapper {
+        background-color: white;
+        width: 250px;
+        height: 430px;
+        margin: 5% auto 0 auto;
+        padding: 5px;
+        align-items: center;
+        text-align: center;
+        border-radius: 25px;
+    }
+
+    .info-container{
+        margin-top: 5px;
+    }
+
+    label {
+        font-style: italic;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+</style>
+
+<div class="info-wrapper">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/2048px-Circle-icons-profile.svg.png" /><br>
+    <div class="info-container">
+    <label>First Name:</label>
+    <p>@Model.FirstName</p>
+    <label>Last Name:</label>
+    <p>@Model.LastName</p>
+    <label>Email:</label>
+    <p>@Model.Email</p>
     </div>
+    <a asp-area="" asp-controller="User" asp-action="Edit" asp-route-cardId="@Model.Id"
+       class="user-btn">Edit</a>
 </div>

@@ -144,5 +144,31 @@ namespace OnlineBankingApp.Controllers
             return View(model);
 		}
 
-	}
+        [HttpGet]
+        public async Task<IActionResult> Edit()
+        {
+            var user = await userManager.GetUserAsync(User);
+
+            var model = new EditUserViewModel()
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditUserViewModel model)
+        {
+            var user = await userManager.GetUserAsync(User);
+
+            await userService.EditUserAsync(user.Id, model);
+
+           return RedirectToAction("Info");
+        }
+
+    }
 }
