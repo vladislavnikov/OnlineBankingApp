@@ -21,15 +21,19 @@ namespace OnlineBankingApp.Core.Services
 			context = _context;
 		}
 
-        public async void EditUserAsync(string userId, EditUserViewModel model)
+        public async Task EditUserAsync(string userId, EditUserViewModel model)
         {
             var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
 
-			user.FirstName = model.FirstName;
-			user.LastName = model.LastName;
-			user.Email = model.Email;
+			if (user != null)
+			{
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Email = model.Email;
+                user.UserName = model.FirstName + model.LastName;
 
-			await context.SaveChangesAsync();
+                await context.SaveChangesAsync();
+            }
         }
 
         public async Task<UserViewModel> GetUserAsync(string userId)

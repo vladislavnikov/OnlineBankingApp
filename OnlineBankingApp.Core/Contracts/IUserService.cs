@@ -12,7 +12,7 @@ namespace OnlineBankingApp.Core.Contracts
     public interface IUserService
     {
 		Task<UserViewModel> GetUserAsync(string userId);
-		void EditUserAsync(string userId, EditUserViewModel model);
+		Task EditUserAsync(string userId, EditUserViewModel model);
 
 	}
 }
