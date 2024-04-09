@@ -34,10 +34,10 @@ namespace OnlineBankingApp
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<ICardService, CardService>();
-            builder.Services.AddScoped<ITransactionService, TransactionService>();
+            builder.Services.AddScoped<ICardRepository, CardRepository>();
+            builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
             builder.Services.AddScoped<IAdminService, AdminService>();
-            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
 
             builder.Services.ConfigureApplicationCookie(options =>
             {

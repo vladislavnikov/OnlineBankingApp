@@ -77,7 +77,7 @@ namespace OnlineBankingApp.Tests.Services
 			int cardId = 1;
 			double amount = 50;
 
-			ITransactionService service = new TransactionService(context);
+			ITransactionRepository service = new TransactionRepository(context);
 
 			// Act
 			await service.WithdrawAsync(amount, cardId);
@@ -97,7 +97,7 @@ namespace OnlineBankingApp.Tests.Services
 			int cardId = 1;
 			double amount = 50;
 
-			ITransactionService service = new TransactionService(context);
+			ITransactionRepository service = new TransactionRepository(context);
 
 			// Act
 			await service.DepositAsync(amount, cardId);
@@ -119,7 +119,7 @@ namespace OnlineBankingApp.Tests.Services
 			cardIds.Add(2);
 			cardIds.Add(3);
 
-			ITransactionService service = new TransactionService(context);
+			ITransactionRepository service = new TransactionRepository(context);
 
 			// Act
 			var dbCard =await service.GetAllTransactionsAsync(cardIds);
@@ -135,7 +135,7 @@ namespace OnlineBankingApp.Tests.Services
 			int cardId1 = 1;
 			int cardId2 = 2;
 
-			ITransactionService service = new TransactionService(context);
+			ITransactionRepository service = new TransactionRepository(context);
 
 			// Act
 			await service.SendAsync(50,cardId1,cardId2);

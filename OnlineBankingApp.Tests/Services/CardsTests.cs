@@ -55,7 +55,7 @@ namespace OnlineBankingApp.Tests.Services
 			// Arrange
 			string userId = "u1";
 
-			ICardService service = new CardService(context);
+			ICardRepository service = new CardRepository(context);
 
 			// Act
 			int newCardId = await service.CreateCardAsync(userId);
@@ -73,7 +73,7 @@ namespace OnlineBankingApp.Tests.Services
 			// Arrange
 			string userId = "u1";
 
-			ICardService service = new CardService(context);
+			ICardRepository service = new CardRepository(context);
 
 			// Act
 			var result = await service.GetAllCardsAsync(userId);
@@ -90,7 +90,7 @@ namespace OnlineBankingApp.Tests.Services
 			// Arrange
 			string userId = "u1";
 
-			ICardService service = new CardService(context);
+			ICardRepository service = new CardRepository(context);
 
 			// Act
 			var result = await service.GetCardAsync(userId);
@@ -106,7 +106,7 @@ namespace OnlineBankingApp.Tests.Services
 			// Arrange
 			string cardNumber = "1111111111111111";
 
-			ICardService service = new CardService(context);
+			ICardRepository service = new CardRepository(context);
 
 			// Act
 			var result = await service.GetCardByNumberAsync(cardNumber);

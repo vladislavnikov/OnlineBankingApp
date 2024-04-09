@@ -13,12 +13,12 @@ namespace OnlineBankingApp.Controllers
     public class TransactionController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;
-        private readonly ITransactionService transactionService;
-        private readonly ICardService cardService;
+        private readonly ITransactionRepository transactionService;
+        private readonly ICardRepository cardService;
 
         public TransactionController(UserManager<ApplicationUser> _userManager,
-            ITransactionService _transactionService,
-            ICardService _cardService)
+            ITransactionRepository _transactionService,
+            ICardRepository _cardService)
         {
             
             this.userManager = _userManager;

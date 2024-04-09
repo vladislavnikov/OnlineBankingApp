@@ -20,13 +20,13 @@ namespace OnlineBankingApp.Controllers
 
         private readonly RoleManager<IdentityRole> roleManager;
 
-		private readonly IUserService userService;
+		private readonly IUserRepository userService;
 
 		public UserController(ApplicationDbContext _context,
             UserManager<ApplicationUser> _userManager,
             SignInManager<ApplicationUser> _signInManager,
             RoleManager<IdentityRole> _roleManager,
-            IUserService _userService)
+            IUserRepository _userService)
         {
 			this.context = _context;
 			this.userManager = _userManager;
